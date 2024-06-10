@@ -1,0 +1,45 @@
+/* Map.css */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .mapboxgl-canvas {
+    position: absolute;
+  }
+  
+  .marker-icon {
+    width: 32px;
+    height: 32px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .mapboxgl-ctrl-logo {
+    display: none !important;
+  }
+  
+  .mapboxgl-ctrl-bottom-left,
+  .mapboxgl-ctrl-bottom-right {
+    display: none !important;
+  }
+  
+  .mapboxgl-ctrl-top-right {
+    top: 10px !important;
+    right: 10px !important;
+  }
+  
+  .mapboxgl-ctrl {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 5px;
+  }
+  
+  .mapboxgl-popup-content {
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: #fff !important;
+    border-radius: 5px;
+  }
+  
+  .mapboxgl-popup-close-button {
+    color: #fff !important;
+  }
+  
