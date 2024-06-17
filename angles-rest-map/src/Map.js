@@ -8,8 +8,8 @@ const Map = () => {
         latitude: 45.63075,
         longitude:  -121.90558,
         zoom: isMobile ? 11.5 : 13.5,
-        bearing: isMobile ? 0 : 100,
-        pitch: isMobile ? 0 : 50,
+        bearing: isMobile ? 100 : 100,
+        pitch: isMobile ? 50 : 50,
     });
 
     const [geojson, setGeojson] = useState(null);
