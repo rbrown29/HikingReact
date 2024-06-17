@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import MapGL, { Source, Layer } from 'react-map-gl';
+import MapGL, { Source, Layer} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 const Map = () => {
+   const isMobile = window.innerWidth < 768;
     const [viewport, setViewport] = useState({
         latitude: 45.56284,
         longitude: -122.15866,
-        zoom: 15.5,
-        bearing: 0,
-        pitch: 0,
+        zoom: isMobile ? 13.8 : 15.5,
+        bearing: isMobile ? 0 : 0,
+        pitch: isMobile ? 0 : 0,
     });
 
     const [geojson, setGeojson] = useState(null);
@@ -42,7 +43,7 @@ const Map = () => {
                         id="point-data"
                         type="circle"
                         paint={{
-                            'circle-radius': 5,
+                            'circle-radius': isMobile ? 1.5 : 6,
                             'circle-color': '#9C9177',
                         }}
                     />
