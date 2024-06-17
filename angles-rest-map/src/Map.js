@@ -5,9 +5,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const Map = () => {
    const isMobile = window.innerWidth < 768;
     const [viewport, setViewport] = useState({
-        latitude: 45.56284,
-        longitude: -122.15866,
-        zoom: isMobile ? 13.8 : 15.5,
+        latitude: 44.37604,
+        longitude: -121.12613,
+        zoom: isMobile ? 13.8 : 14.5,
         bearing: isMobile ? 0 : 0,
         pitch: isMobile ? 0 : 0,
     });
@@ -15,7 +15,7 @@ const Map = () => {
     const [geojson, setGeojson] = useState(null);
 
     useEffect(() => {
-        fetch('/AngelsRest.geojson')
+        fetch('/SmithRock.geojson')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -43,7 +43,7 @@ const Map = () => {
                         id="point-data"
                         type="circle"
                         paint={{
-                            'circle-radius': isMobile ? 1.5 : 6,
+                            'circle-radius': isMobile ? 1.5 : 4,
                             'circle-color': '#9C9177',
                         }}
                     />
