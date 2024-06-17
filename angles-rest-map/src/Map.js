@@ -5,17 +5,17 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const Map = () => {
    const isMobile = window.innerWidth < 768;
     const [viewport, setViewport] = useState({
-        latitude: 44.37604,
-        longitude: -121.12613,
-        zoom: isMobile ? 13 : 14.5,
-        bearing: isMobile ? 0 : 0,
-        pitch: isMobile ? 0 : 0,
+        latitude: 45.63075,
+        longitude:  -121.90558,
+        zoom: isMobile ? 12.5 : 13.5,
+        bearing: isMobile ? 0 : 100,
+        pitch: isMobile ? 0 : 50,
     });
 
     const [geojson, setGeojson] = useState(null);
 
     useEffect(() => {
-        fetch('/SmithRock.geojson')
+        fetch('/EagleCreektoTunnelFallsHike.geojson')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -43,7 +43,7 @@ const Map = () => {
                         id="point-data"
                         type="circle"
                         paint={{
-                            'circle-radius': isMobile ? 1.5 : 4,
+                            'circle-radius': isMobile ? 1 : 2,
                             'circle-color': '#9C9177',
                         }}
                     />
