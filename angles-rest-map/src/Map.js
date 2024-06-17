@@ -7,8 +7,8 @@ const Map = () => {
     const [viewport, setViewport] = useState({
         latitude: 45.63075,
         longitude:  -121.90558,
-        zoom: isMobile ? 11.5 : 13.5,
-        bearing: isMobile ? 100 : 100,
+        zoom: isMobile ? 12.5 : 13.5,
+        bearing: isMobile ? 120 : 100,
         pitch: isMobile ? 50 : 50,
     });
 
