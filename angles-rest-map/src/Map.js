@@ -5,9 +5,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const Map = () => {
    const isMobile = window.innerWidth < 768;
     const [viewport, setViewport] = useState({
-        latitude: 45.300,
-        longitude:  -121.786,
-        zoom: isMobile ? 12.5 : 14.5,
+        latitude: 44.279,
+        longitude:  -124.112,
+        zoom: isMobile ? 12.5 : 17.68,
         bearing: isMobile ? 120 : 100,
         pitch: isMobile ? 50 : 50,
     });
@@ -15,7 +15,7 @@ const Map = () => {
     const [geojson, setGeojson] = useState(null);
 
     useEffect(() => {
-        fetch('/MirrorlakeTrail.geojson')
+        fetch('/CapePerpetuaHike.geojson')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -43,7 +43,7 @@ const Map = () => {
                         id="point-data"
                         type="circle"
                         paint={{
-                            'circle-radius': isMobile ? 1 : 2,
+                            'circle-radius': isMobile ? 1 : 5.5,
                             'circle-color': '#9C9177',
                         }}
                     />
