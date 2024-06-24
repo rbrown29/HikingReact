@@ -5,9 +5,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const Map = () => {
    const isMobile = window.innerWidth < 768;
     const [viewport, setViewport] = useState({
-        latitude: 45.049,
-        longitude:  -123.998,
-        zoom: isMobile ? 13.68 : 14.68,
+        latitude: 45.217,
+        longitude:  -123.973,
+        zoom: isMobile ? 13.68 : 15.68,
         bearing: isMobile ? 120 : 100,
         pitch: isMobile ? 50 : 50,
     });
@@ -15,7 +15,7 @@ const Map = () => {
     const [geojson, setGeojson] = useState(null);
 
     useEffect(() => {
-        fetch('/CascadeHeadHike.geojson')
+        fetch('/CapeKiwanda.geojson')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
