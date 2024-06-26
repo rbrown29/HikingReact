@@ -5,17 +5,17 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const Map = () => {
    const isMobile = window.innerWidth < 768;
     const [viewport, setViewport] = useState({
-        latitude: 44.3118,
-        longitude:  -122.02616,
-        zoom: isMobile ? 12.68 : 14.20,
-        bearing: isMobile ? 120 : 100,
+        latitude: 44.84319,
+        longitude:  -122.20389,
+        zoom: isMobile ? 12.68 : 13.68,
+        bearing: isMobile ? 120 : 0,
         pitch: isMobile ? 50 : 50,
     });
 
     const [geojson, setGeojson] = useState(null);
 
     useEffect(() => {
-        fetch('/TamolitchPoolHike.geojson')
+        fetch('/OpalPoolCedarFlatsHike.geojson')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -25,7 +25,6 @@ const Map = () => {
             .then((data) => setGeojson(data))
             .catch((error) => console.error('Error fetching the GeoJSON file:', error));
     }, []);
-    console.log(geojson);
     const mapStyle = 'mapbox://styles/digit9/clxi9m3kh005u01pugx4x23n6';
 
     return (
