@@ -5,9 +5,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const Map = () => {
    const isMobile = window.innerWidth < 768;
     const [viewport, setViewport] = useState({
-        latitude: 44.84319,
-        longitude:  -122.20389,
-        zoom: isMobile ? 12.68 : 13.68,
+        latitude: 45.76372,
+        longitude:  -123.97613,
+        zoom: isMobile ? 12.68 : 14.8,
         bearing: isMobile ? 120 : 0,
         pitch: isMobile ? 50 : 50,
     });
@@ -15,7 +15,7 @@ const Map = () => {
     const [geojson, setGeojson] = useState(null);
 
     useEffect(() => {
-        fetch('/OpalPoolCedarFlatsHike.geojson')
+        fetch('/CapeFalconHike.geojson')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -42,7 +42,7 @@ const Map = () => {
                         id="point-data"
                         type="circle"
                         paint={{
-                            'circle-radius': isMobile ? 1 : 2.5,
+                            'circle-radius': isMobile ? 1 : 1.5,
                             'circle-color': '#9C9177',
                         }}
                     />
