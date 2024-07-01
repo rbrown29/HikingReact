@@ -5,17 +5,17 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const Map = () => {
    const isMobile = window.innerWidth < 768;
     const [viewport, setViewport] = useState({
-        latitude: 46.2429,
-        longitude:  -121.54328,
-        zoom: isMobile ? 12.68 : 13.68,
-        bearing: isMobile ? 120 : 0,
+        latitude: 44.85362,
+        longitude:  -122.13938,
+        zoom: isMobile ? 12.68 : 14,
+        bearing: isMobile ? 120 : 120,
         pitch: isMobile ? 50 : 50,
     });
 
     const [geojson, setGeojson] = useState(null);
 
     useEffect(() => {
-        fetch('/AdamsGlacierMeadowsHike.geojson')
+        fetch('/BattleAxLoopHike.geojson')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
