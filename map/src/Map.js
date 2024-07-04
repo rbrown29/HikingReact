@@ -5,17 +5,17 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 const Map = () => {
    const isMobile = window.innerWidth < 768;
     const [viewport, setViewport] = useState({
-        latitude: 44.85362,
-        longitude:  -122.13938,
-        zoom: isMobile ? 12.68 : 14,
-        bearing: isMobile ? 120 : 120,
+        latitude: 44.28414,
+        longitude:  -121.84142,
+        zoom: isMobile ? 12.68 : 14.10,
+        bearing: isMobile ? 120 : 60,
         pitch: isMobile ? 50 : 50,
     });
 
     const [geojson, setGeojson] = useState(null);
 
     useEffect(() => {
-        fetch('/BattleAxLoopHike.geojson')
+        fetch('/BelknapCraterHike.geojson')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -25,7 +25,7 @@ const Map = () => {
             .then((data) => setGeojson(data))
             .catch((error) => console.error('Error fetching the GeoJSON file:', error));
     }, []);
-    const mapStyle = 'mapbox://styles/digit9/clxi9m3kh005u01pugx4x23n6';
+    const mapStyle = 'mapbox://styles/digit9/clxia263s005r01o71y1radny';
 
     return (
         <MapGL
@@ -42,8 +42,8 @@ const Map = () => {
                         id="point-data"
                         type="circle"
                         paint={{
-                            'circle-radius': isMobile ? 1 : 2.5,
-                            'circle-color': '#9C9177',
+                            'circle-radius': isMobile ? 1 : 1,
+                            'circle-color': 'rgb(180,255,0)',
                         }}
                     />
                 </Source>
