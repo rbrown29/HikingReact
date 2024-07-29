@@ -25,7 +25,7 @@ const Map = () => {
             .then((data) => setGeojson(data))
             .catch((error) => console.error('Error fetching the GeoJSON file:', error));
     }, []);
-    const mapStyle = 'mapbox://styles/digit9/clxia263s005r01o71y1radny';
+    const mapStyle = 'mapbox://styles/digit9/clybwn7wb00mm01px3pmc32li';
 
     return (
         <MapGL
@@ -42,8 +42,8 @@ const Map = () => {
                         id="point-data"
                         type="circle"
                         paint={{
-                            'circle-radius': isMobile ? 1 : 1,
-                            'circle-color': 'rgb(180,255,0)',
+                            'circle-radius': isMobile ? 1 : 2,
+                            'circle-color': 'black',
                         }}
                     />
                 </Source>
