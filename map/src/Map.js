@@ -8,7 +8,7 @@ import MapGL, {
   FullscreenControl,
 } from "react-map-gl";
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
-import bbox from "@turf/bbox"; // Add this line
+import bbox from "@turf/bbox"; 
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 
