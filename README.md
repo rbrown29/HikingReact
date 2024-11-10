@@ -76,3 +76,5 @@ A React-based application that visualizes hiking trails using Mapbox GL and GeoJ
 - [Mapbox Draw](https://docs.mapbox.com/mapbox-gl-js/api/#draw) – A JavaScript library for adding drawing tools to Mapbox GL JS.
 - [GeoJSON](https://geojson.org/) – An open standard format for encoding a variety of geographic data structures.
 - [turf/bbox](https://turfjs.org/docs/#bbox) – A JavaScript library for geospatial analysis.
+
+![Hiking Map](HikingMap.png)
