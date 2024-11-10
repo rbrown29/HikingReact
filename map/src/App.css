@@ -9,3 +9,16 @@
   height: 100%;
   width: 100%;
 }
+
+/* Style Mapbox Draw controls */
+.mapbox-gl-draw_ctrl-draw-btn,
+.mapbox-gl-draw_ctrl-draw-btn:hover {
+    background-color: #08ff08 !important;
+    color: #333 !important;
+    border: none !important;
+}
+
+.mapbox-gl-draw_ctrl-draw-btn.mapbox-gl-draw_trash {
+    background-color: #08ff08 !important;
+}
+
