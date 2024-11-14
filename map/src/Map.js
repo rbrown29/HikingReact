@@ -8,7 +8,7 @@ import MapGL, {
   FullscreenControl,
 } from "react-map-gl";
 import MapboxDraw from "@mapbox/mapbox-gl-draw";
-import bbox from "@turf/bbox"; 
+import bbox from "@turf/bbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css";
 
@@ -17,9 +17,9 @@ const Map = () => {
   const [viewState, setViewState] = useState({
     latitude: 45.04962,
     longitude: -123.99459,
-    zoom: isMobile ? 12.68 : 15,
-    bearing: isMobile ? 120 : 60,
-    pitch: isMobile ? 50 : 50,
+    zoom: isMobile ? 12.68 : 13.5,
+    bearing: isMobile ? 120 : 65,
+    pitch: isMobile ? 50 : 60,
   });
 
   const [mapStyle, setMapStyle] = useState(
@@ -30,7 +30,7 @@ const Map = () => {
   const [draw, setDraw] = useState(null);
 
   useEffect(() => {
-    fetch("/BattleAxLoopHike.geojson")
+    fetch("/AngelsRest.geojson")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok " + response.statusText);
@@ -46,7 +46,9 @@ const Map = () => {
           ...prevState,
           longitude: (minLng + maxLng) / 2,
           latitude: (minLat + maxLat) / 2,
-          zoom: isMobile ? 12 : 13.5, // Adjust zoom level
+          zoom: isMobile ? 12 : 15.5, // Adjust zoom level
+          bearing: isMobile ? 120 : 120, // Adjust bearing
+          pitch: isMobile ? 50 : 50, // Adjust pitch
         }));
       })
       .catch((error) =>
@@ -142,7 +144,7 @@ const Map = () => {
 
       {geojson && (
         <Source id="my-data" type="geojson" data={geojson}>
-          {/* Line Layer */}
+          {/* Point Layer */}
           <Layer
             id="point-data"
             type="circle"
