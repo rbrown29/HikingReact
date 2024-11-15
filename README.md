@@ -77,4 +77,7 @@ A React-based application that visualizes hiking trails using Mapbox GL and GeoJ
 - [GeoJSON](https://geojson.org/) – An open standard format for encoding a variety of geographic data structures.
 - [turf/bbox](https://turfjs.org/docs/#bbox) – A JavaScript library for geospatial analysis.
 
+### Preview
+[Hiking Map](https://jazzy-cheesecake-12788a.netlify.app/)
+
 ![Hiking Map](HikingMap.png)
