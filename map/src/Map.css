@@ -1,8 +1,9 @@
 /* Map.css */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-  }
+body, html {
+  overflow-y: hidden; /* Disable vertical scrolling */
+  height: 100%;       /* Ensure the content takes full height */
+}
+
   
   .mapboxgl-canvas {
     position: absolute;
