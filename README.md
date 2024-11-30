@@ -13,6 +13,7 @@ A React-based application that visualizes hiking trails using Mapbox GL and GeoJ
 - Multiple map styles (light, dark, streets, satellite).
 - Customizable map controls (fullscreen, scale, navigation).
 - Mapbox Draw integration for adding and editing points, lines, and polygons.
+- Elevation chart using Chart.js to visualize trail elevation data.
 
 ## Getting Started
 
@@ -76,8 +77,13 @@ A React-based application that visualizes hiking trails using Mapbox GL and GeoJ
 - [Mapbox Draw](https://docs.mapbox.com/mapbox-gl-js/api/#draw) – A JavaScript library for adding drawing tools to Mapbox GL JS.
 - [GeoJSON](https://geojson.org/) – An open standard format for encoding a variety of geographic data structures.
 - [turf/bbox](https://turfjs.org/docs/#bbox) – A JavaScript library for geospatial analysis.
+- [Chart.js](https://www.chartjs.org/) – A JavaScript library for creating charts and graphs.
 
 ### Preview
 [Hiking Map](https://jazzy-cheesecake-12788a.netlify.app/)
 
 ![Hiking Map](HikingMap.png)
+
+![Hiking Map](ElevationChart.png)
+
+![Hiking Map](Terrian.png) 
