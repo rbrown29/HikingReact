@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import "./elevation.css";
 import {
   Chart,
   LineController,
@@ -11,7 +12,6 @@ import {
   Legend,
 } from "chart.js";
 
-// Register required Chart.js components
 Chart.register(
   LineController,
   LineElement,
@@ -29,68 +29,66 @@ const ElevationProfile = ({ elevationData }) => {
 
   useEffect(() => {
     if (chartInstanceRef.current) {
-      chartInstanceRef.current.destroy(); // Cleanup previous Chart instance
+      chartInstanceRef.current.destroy(); 
     }
 
     if (elevationData.length > 0) {
       const ctx = chartRef.current.getContext("2d");
 
-      // Calculate chart width dynamically based on the number of points
-      const chartWidth = Math.max(1000, elevationData.length * 20); // 20px per point
+      const chartWidth = Math.max(1000, elevationData.length * 20); 
 
-      // Set the canvas width dynamically
       chartRef.current.width = chartWidth;
 
       chartInstanceRef.current = new Chart(ctx, {
         type: "line",
         data: {
-          labels: elevationData.map((_, index) => `Point ${index + 1}`), // X-axis labels
+          labels: elevationData.map((_, index) => `Point ${index + 1}`), 
           datasets: [
             {
               label: "Elevation (Feet)",
-              data: elevationData, // Y-axis data
-              borderColor: "#08ff08", // Line color
-              backgroundColor: "#08ff08", // Fill under line
+              data: elevationData, 
+              borderColor: "#08ff08", 
+              backgroundColor: "#08ff08", 
               borderWidth: 2,
-              tension: 0.4, // Smooth the line
+              tension: 0.4, 
             },
           ],
         },
         options: {
-          responsive: false, // Disable Chart.js responsiveness to enable custom size
+          responsive: false, 
           maintainAspectRatio: false,
           scales: {
             x: {
               title: {
                 display: true,
                 text: "Points",
-                color: "#e5e4e2", // X-axis title color
+                color: "#e5e4e2", 
               },
               ticks: {
-                color: "#e5e4e2", // X-axis label color
+                color: "#e5e4e2", 
               },
             },
             y: {
               title: {
                 display: true,
                 text: "Elevation (Feet)",
-                color: "#e5e4e2", // Y-axis title color
+                color: "#e5e4e2", 
               },
               ticks: {
-                color: "#e5e4e2", // Y-axis label color
+                color: "#e5e4e2", 
               },
             },
           },
           plugins: {
             legend: {
               labels: {
-                color: "#e5e4e2", // Legend text color
+                color: "#e5e4e2",
               },
             },
             tooltip: {
-              bodyColor: "#333", // Tooltip text color
-              titleColor: "#333", // Tooltip title color
-              backgroundColor: "#f9f9f9", // Tooltip background color
+              bodyColor: "#333", 
+              titleColor: "#333", 
+              backgroundColor: "#f9f9f9", 
               borderColor: "#ccc",
               borderWidth: 1,
             },
@@ -113,7 +111,7 @@ const ElevationProfile = ({ elevationData }) => {
         width: "100%",
         height: "300px",
         marginTop: "10px",
-        overflowX: "auto", // Enable horizontal scrolling
+        overflowX: "auto", 
         overflowY: "hidden",
       }}
     >
@@ -121,7 +119,7 @@ const ElevationProfile = ({ elevationData }) => {
         ref={chartRef}
         style={{
           display: "block",
-          height: "100%", // Allow full height scaling
+          height: "100%", 
         }}
       />
     </div>

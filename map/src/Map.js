@@ -49,7 +49,7 @@ const Map = () => {
           ...prevState,
           longitude: (minLng + maxLng) / 2,
           latitude: (minLat + maxLat) / 2,
-          zoom: isMobile ? 12 : 14.9,
+          zoom: isMobile ? 13 : 14.9,
           bearing: isMobile ? 120 : 0,
           pitch: isMobile ? 50 : 50,
         }));

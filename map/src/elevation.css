@@ -1,0 +1,11 @@
+.elevation-profile-container {
+    width: 100%; 
+    height: 300px; 
+  }
+  
+  @media (max-width: 768px) {
+    .elevation-profile-container {
+      height: 200px; 
+    }
+  }
+  
